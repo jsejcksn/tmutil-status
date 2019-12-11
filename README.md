@@ -24,10 +24,44 @@ npm install tmutil-status
 
 ## Use
 
-```js
-const tmutilStatus = require('tmutil-status');
 
+### ESM import
+
+```js
+import tmutilStatus from 'tmutil-status';
+```
+
+### CommonJS import
+
+```js
+const tmutilStatus = require('tmutil-status/commonjs');
+```
+
+### Promise use
+
+```js
+// async/await
+(async () => {
+  try {
+    const data = await tmutilStatus();
+    console.log(data);
+  }
+  catch (err) {
+    console.error(err);
+  }
+})();
+
+// chaining
 tmutilStatus()
-  .then(status => console.log(status))
-  .catch(err => /* handle error */);
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+### Callback use
+
+```js
+tmutilStatus((err, data) => {
+  if (err) console.error(err);
+  else console.log(data);
+});
 ```

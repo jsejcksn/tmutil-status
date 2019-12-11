@@ -2,8 +2,9 @@
   "name": "tmutil-status",
   "version": "1.0.0",
   "description": "Get macOS Time Machine status as a JS object",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "./esm/index.mjs",
+  "module": "./esm/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

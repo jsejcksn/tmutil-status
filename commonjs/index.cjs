@@ -1,5 +1,4 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const {exec} = require('child_process');
 
 const parse = statusString => {
   const castValue = str => {
@@ -39,17 +38,24 @@ const parse = statusString => {
   return obj;
 };
 
-const tmutilStatus = async () => {
+const tmutilStatus = callback => new Promise((resolve, reject) => {
   try {
-    const status = await exec('tmutil status');
-    const {stdout} = status;
-    const trimmed = stdout.trim();
-    return parse(trimmed);
+    if (process.platform !== 'darwin') {
+      throw new Error('This module is only supported on macOS');
+    }
+    exec('tmutil status', (err, stdout, stderr) => {
+      if (err) throw err;
+      if (stderr) throw new Error(stderr);
+      const trimmed = stdout.trim();
+      const data = parse(trimmed);
+      if (callback) callback(null, data);
+      resolve(data);
+    });
   }
   catch (err) {
-    console.error(err.stderr);
-    throw err;
+    if (callback) callback(err);
+    reject(err);
   }
-};
+});
 
 module.exports = tmutilStatus;
