@@ -1,0 +1,30 @@
+{
+  "name": "tmutil-status",
+  "version": "1.0.0",
+  "description": "Get macOS Time Machine status as a JS object",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsejcksn/tmutil-status.git"
+  },
+  "keywords": [
+    "macOS",
+    "cli",
+    "tmutil",
+    "status"
+  ],
+  "author": "Jesse Jackson <npm@jcksn.org> (https://jcksn.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsejcksn/tmutil-status/issues"
+  },
+  "homepage": "https://github.com/jsejcksn/tmutil-status#readme",
+  "devDependencies": {
+    "@jsejcksn/eslint-config": "^3.0.0",
+    "eslint": "^6.7.2"
+  }
+}
