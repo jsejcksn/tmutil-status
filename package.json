@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./esm/index.mjs",
   "module": "./esm/index.mjs",
+  "os": ["darwin"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
