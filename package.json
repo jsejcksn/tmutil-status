@@ -1,6 +1,6 @@
 {
   "name": "tmutil-status",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Get macOS Time Machine status as a JS object",
   "type": "module",
   "main": "./esm/index.mjs",
